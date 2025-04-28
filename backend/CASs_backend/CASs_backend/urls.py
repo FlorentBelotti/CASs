@@ -17,6 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from api_tester.views import api_test_view
+from CASs_app.views import vanilla_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # API debug
+    path('api/test/', api_test_view ),
+
+    # CASs debug
+    path('api/vanilla/', vanilla_view),
 ]

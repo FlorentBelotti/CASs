@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Installed apps
+    'rest_framework',
+    'corsheaders',
+
+    # Debug
+    'api_tester'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +54,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Installed middleware
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'CASs_backend.urls'
@@ -121,3 +131,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom settings
+
+    # Debug
+
+# Allow requests for ALL domains
+CORS_ALLOW_ALL_ORIGINS = True
