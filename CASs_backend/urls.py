@@ -1,3 +1,9 @@
+from django.contrib import admin
+from django.urls import path, include
+
+from api_tester.views import api_test_view
+from CASs_app.views import vanilla_view
+
 """
 URL configuration for CASs_backend project.
 
@@ -14,18 +20,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-
-from api_tester.views import api_test_view
-from CASs_app.views import vanilla_view
 
 urlpatterns = [
+    
+    # CASs_app paths
+    path('', include('CASs_app.urls')),
+
+    # Admin path
     path('admin/', admin.site.urls),
-
-    # API debug
-    path('api/test/', api_test_view ),
-
-    # CASs debug
-    path('api/vanilla/', vanilla_view),
 ]

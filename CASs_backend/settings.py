@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # CASs
+    'CASs_app',
+
     # Installed apps
     'rest_framework',
     'corsheaders',

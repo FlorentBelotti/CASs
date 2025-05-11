@@ -1,0 +1,102 @@
+/CASs_app/templates/CASs_app/home.html
+{% extends 'base.html' %}
+
+{% block title %}Accueil - Sport Tracking{% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-md-12 text-center">
+        <h1 class="display-4 mb-3"> CASs, votre assistant(e) de suivi sportif</h1>
+        <p class="lead">Suivez vos séances, enregistrez vos performances et visualisez vos progrès</p>
+        <div class="mt-4">
+            <a href="#" class="btn btn-success btn-lg me-2">Nouvelle Séance</a>
+            <a href="#" class="btn btn-outline-primary btn-lg">Voir mes Statistiques</a>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-center mb-4">Commencez facilement</h2>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center py-4">
+                <div class="mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-circle text-success" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title h4 mb-3">Créez une séance</h3>
+                <p class="card-text">Commencez par créer une nouvelle séance d'entraînement avec un nom personnalisé.</p>
+                <a href="#" class="btn btn-outline-primary mt-2">Nouvelle séance</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center py-4">
+                <div class="mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list-check text-primary" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title h4 mb-3">Ajoutez des exercices</h3>
+                <p class="card-text">Enregistrez vos exercices avec leurs séries, poids et répétitions.</p>
+                <a href="#" class="btn btn-outline-primary mt-2">Voir les exercices</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card feature-card">
+            <div class="card-body text-center py-4">
+                <div class="mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bar-chart-line text-info" viewBox="0 0 16 16">
+                        <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title h4 mb-3">Suivez vos progrès</h3>
+                <p class="card-text">Visualisez votre progression au fil du temps grâce aux statistiques détaillées.</p>
+                <a href="#" class="btn btn-outline-primary mt-2">Voir les statistiques</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if recent_sessions %}
+<div class="row my-4">
+    <div class="col-12">
+        <h2 class="mb-3">Dernières séances</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Date</th>
+                        <th>Durée</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for session in recent_sessions %}
+                    <tr>
+                        <td>{{ session.name }}</td>
+                        <td>{{ session.date|date:"d/m/Y H:i" }}</td>
+                        <td>{{ session.duration|default:"En cours" }}</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-primary">Détails</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
